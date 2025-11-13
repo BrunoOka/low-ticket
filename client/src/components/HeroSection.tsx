@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { VolumeX } from "lucide-react";
 
 interface HeroSectionProps {
@@ -8,9 +8,17 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onCTAClick }: HeroSectionProps) {
   const [showOverlay, setShowOverlay] = useState(true);
+  const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const handleClickOverlay = () => {
     setShowOverlay(false);
+    
+    if (iframeRef.current && iframeRef.current.contentWindow) {
+      iframeRef.current.contentWindow.postMessage(
+        JSON.stringify({ method: 'setVolume', value: 1 }),
+        'https://player.vimeo.com'
+      );
+    }
   };
 
   return (
@@ -27,6 +35,7 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-md bg-card rounded-lg overflow-hidden border border-border" style={{ aspectRatio: '9/16' }} data-testid="video-hero">
             <iframe
+              ref={iframeRef}
               src="https://player.vimeo.com/video/1136122760?autoplay=1&muted=1&controls=1"
               style={{ width: '100%', height: '100%' }}
               frameBorder="0"
