@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { useState, useRef, useEffect } from "react";
-import { VolumeX, Play } from "lucide-react";
+import { useState, useRef } from "react";
+import { Play } from "lucide-react";
 
 interface HeroSectionProps {
   onCTAClick: () => void;
@@ -8,21 +8,12 @@ interface HeroSectionProps {
 
 export default function HeroSection({ onCTAClick }: HeroSectionProps) {
   const [showOverlay, setShowOverlay] = useState(true);
-  const [videoStarted, setVideoStarted] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const handleClickOverlay = () => {
     setShowOverlay(false);
     
     if (iframeRef.current && iframeRef.current.contentWindow) {
-      if (!videoStarted) {
-        iframeRef.current.contentWindow.postMessage(
-          JSON.stringify({ method: 'play' }),
-          'https://player.vimeo.com'
-        );
-        setVideoStarted(true);
-      }
-      
       iframeRef.current.contentWindow.postMessage(
         JSON.stringify({ method: 'setVolume', value: 1 }),
         'https://player.vimeo.com'
@@ -45,7 +36,7 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
           <div className="relative w-full max-w-md bg-card rounded-lg overflow-hidden border border-border" style={{ aspectRatio: '9/16' }} data-testid="video-hero">
             <iframe
               ref={iframeRef}
-              src="https://player.vimeo.com/video/1136122760?background=0&autoplay=0&muted=1&controls=1&quality=auto&playsinline=1#t=0s"
+              src="https://player.vimeo.com/video/1136122760?autoplay=1&muted=1&controls=1&quality=auto&playsinline=1&autopause=0"
               style={{ width: '100%', height: '100%' }}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
