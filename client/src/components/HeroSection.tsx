@@ -1,0 +1,80 @@
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { VolumeX } from "lucide-react";
+
+interface HeroSectionProps {
+  onCTAClick: () => void;
+}
+
+export default function HeroSection({ onCTAClick }: HeroSectionProps) {
+  const [showOverlay, setShowOverlay] = useState(true);
+
+  const handleClickOverlay = () => {
+    setShowOverlay(false);
+  };
+
+  return (
+    <section className="relative py-20 bg-background">
+      <div className="max-w-5xl mx-auto px-6">
+        <h1 
+          className="text-4xl md:text-5xl font-bold mb-6 text-center text-foreground leading-tight"
+          style={{ fontFamily: 'Poppins, sans-serif' }}
+          data-testid="text-hero-title"
+        >
+          51 Métodos de Musculação para Transformar Seu Corpo
+        </h1>
+        
+        <div className="flex justify-center mb-8">
+          <div className="relative w-full max-w-md bg-card rounded-lg overflow-hidden border border-border" style={{ aspectRatio: '9/16' }} data-testid="video-hero">
+            <iframe
+              src="https://player.vimeo.com/video/1136122760?autoplay=1&muted=1&controls=1"
+              style={{ width: '100%', height: '100%' }}
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+              title="51 Métodos de Musculação"
+            />
+            
+            {showOverlay && (
+              <div 
+                className="absolute inset-0 flex items-center justify-center cursor-pointer z-10"
+                onClick={handleClickOverlay}
+                data-testid="video-overlay"
+              >
+                <div className="bg-red-600 px-8 py-6 rounded-md text-center text-white shadow-lg">
+                  <p className="text-lg font-bold mb-3">
+                    Seu vídeo já começou
+                  </p>
+                  <div className="flex items-center justify-center gap-2">
+                    <VolumeX className="w-6 h-6" />
+                    <p className="text-base font-semibold">
+                      Clique para ouvir
+                    </p>
+                  </div>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+        
+        <p 
+          className="text-xl md:text-2xl mb-8 text-center text-muted-foreground font-medium"
+          data-testid="text-hero-subtitle"
+        >
+          Transforme seu corpo e sua performance com o método certo. Escolha seu plano e comece hoje com acesso imediato.
+        </p>
+        
+        <div className="flex justify-center">
+          <Button
+            size="lg"
+            className="bg-cta-orange hover:bg-cta-orange text-cta-orange-foreground px-12 py-6 text-lg font-semibold uppercase tracking-wide shadow-xl hover-elevate active-elevate-2"
+            onClick={onCTAClick}
+            data-testid="button-hero-cta"
+          >
+            Ver Planos Disponíveis
+          </Button>
+        </div>
+      </div>
+    </section>
+  );
+}

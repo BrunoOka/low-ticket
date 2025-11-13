@@ -1,0 +1,212 @@
+1) Planejamento rápido (10–30 min)
+
+Produto: defina título, formato e preço.
+Ex.: 51 Métodos de Musculação — PDF + vídeos — R$29.
+
+Oferta: o que entra no ticket básico (PDF) e no ticket 2 (ex.: PDF + plano + vídeos extras).
+
+Order bumps: 2–4 upsells rápidos (ex.: planilha R$9, guia de alimentação R$19, pacote de vídeos R$29).
+
+Público: quem vai comprar (idade, nível, objetivo).
+
+Objetivo da página: conversão direta para checkout + captura de e-mail (opcional).
+
+2) Textos prontos (copy) — cole direto na página
+Hero (topo)
+
+Título: 51 Métodos de Musculação para Transformar Seu Corpo
+
+Subtítulo: Treine de forma eficiente e segura, em casa ou na academia — acesso imediato.
+
+CTA: Quero Meu Guia Agora — R$29 (botão)
+
+Problema (1 parágrafo)
+
+“Você treina e não vê resultado? Métodos genéricos e treinos mal planejados atrasam seu progresso e aumentam risco de lesão.”
+
+Solução (bullets)
+
+Métodos passo a passo para todos os níveis.
+
+Técnicas de força, hipertrofia e resistência.
+
+Treinos curtos (30–45 min).
+
+PDF + vídeos demonstrativos.
+
+Benefícios (4 bullets)
+
+Ganho de força e resistência com segurança.
+
+Mais definição com treinos eficientes.
+
+Economia de tempo.
+
+Plano pronto para começar hoje.
+
+Oferta (preço + bônus)
+
+Preço: R$29
+
+Bônus: Vídeo demonstrativo com 5 métodos exclusivos.
+
+CTA: Quero Meu Guia Agora → link do checkout
+
+FAQ (3 perguntas)
+
+Preciso de equipamentos? → Não.
+
+É seguro para iniciantes? → Sim.
+
+Quanto tempo até ver resultado? → Depende, mas com consistência verá mudanças em semanas.
+
+Garantia curta
+
+“Satisfação garantida ou seu dinheiro de volta em 7 dias.”
+
+3) Design e paleta de cores (rápido)
+
+Header/títulos: #1a73e8 (azul forte)
+
+CTA: #ff6b00 (laranja)
+
+Fundo: #f7f7f7
+
+Texto: #333333
+
+Checks: #28a745
+
+Mantenha 1–2 fontes sem-serifa e espaçamento generoso.
+
+4) Montando a página (3 caminhos — escolha um)
+A. No-code (mais rápido, sem HTML)
+
+Kiwify / Hotmart / Carrd / Canva
+
+Crie conta → Novo projeto/landing.
+
+Copia/cola os textos acima em blocos (Hero, Problema, Solução...).
+
+Suba imagem da capa do e-book e mockups.
+
+Configure botões para abrir o link de checkout.
+
+Publique e copie o link.
+
+B. Replit / GitHub Pages / Firebase (controle total — exige mínimo de HTML)
+
+Use o HTML que você já tem (ou eu te dei).
+
+Substitua href="#" pelos links de checkout.
+
+Faça upload das imagens na pasta images.
+
+Deploy: Replit (Run → Open), ou Firebase Hosting (firebase deploy), ou GitHub Pages.
+
+C. Construtores com checkout embutido (recomendado se for vender direto)
+
+Faça toda a página dentro do painel da plataforma (ex: Kiwify) para ter checkout integrado + order bumps.
+
+5) Configurar checkout e order bumps
+
+Criar produto no Kiwify/Hotmart: título, descrição, preço, arquivo PDF (ou link ao Google Drive privado).
+
+Adicionar order bumps no fluxo de checkout (opções que o comprador marca com checkbox).
+
+Configurar upsell pós-compra (opcional): oferta maior numa página de obrigado com botão one-click (se a plataforma suportar).
+
+Textos prontos para order bumps (checkbox):
+
+ Planilha de acompanhamento de treino — R$9 — Acompanhe séries, cargas e evolução.
+
+ Guia de alimentação para hipertrofia (20 receitas) — R$19.
+
+ Pacote de 10 vídeos de técnica avançada — R$29.
+
+6) Imagens e prova social
+
+Faça 3 imagens: capa do e-book, mockup de página interna e foto de treino.
+
+Se não tiver depoimentos reais, use placeholders curtos até começar a coletar reviews.
+
+Otimize imagens (webp/jpg, ≤200 KB) e coloque alt descritivo.
+
+7) Tracking, pixels e analytics
+
+Facebook Pixel: crie/cole ID no head da página.
+
+Google Analytics / GA4: cole o Measurement ID.
+
+Eventos: track de clique no CTA e pageview de checkout.
+
+Teste com o assistente de pixels/Facebook Events Manager.
+
+8) Testes essenciais antes de lançar
+
+Teste todos os CTA → abrem checkout correto.
+
+Compre como teste (sandbox) para checar fluxo e entregas automáticas.
+
+Teste no celular: botões tocáveis, textos legíveis.
+
+Velocidade: carregamento < 3s ideal.
+
+9) Split Testing simples (A/B)
+
+Duplicar a página (versão A e B). Trocar apenas um elemento por vez:
+
+Variante A: CTA laranja + “R$29” em destaque.
+
+Variante B: CTA azul + headline “Transforme seu corpo em 30 dias”.
+
+Direcione tráfego 50/50 (anúncios ou links diferentes) e compare taxa de conversão após 200+ visitas por variação.
+
+10) Lançamento e tráfego inicial
+
+Orgânico: post no TikTok/Reels com teaser + link na bio. Use cortes mostrando um método.
+
+Anúncios Meta: use criativo em vídeo curto (15s) com gancho (headline + CTA). Teste 3 criativos.
+
+Parcerias: perfis fitness para divulgar com comissão (afiliados).
+
+11) Pós-venda e automação
+
+Configurar e-mail de entrega com link do PDF e bônus (se prometeu vídeo, colocar link privado).
+
+Sequência automatizada (3 e-mails):
+
+E-mail 1 (imediato): entrega e instruções.
+
+E-mail 2 (2 dias): dicas rápidas + pedir review.
+
+E-mail 3 (7 dias): oferta do upsell/mentoria ou upsell maior.
+
+12) Checklist final (antes de publicar)
+
+ Texto do produto preenchido (títulos, bullets, FAQ).
+
+ Imagens mockup no site.
+
+ Link de checkout funcionando.
+
+ Order bumps configurados no checkout.
+
+ Pixel FB e GA instalados e testados.
+
+ Página responsiva testada em celular.
+
+ Teste de compra (sandbox) feito.
+
+ Sequência de e-mail ativa.
+
+ Link público pronto para tráfego.
+
+Exemplos de CTAs prontos (use variações)
+
+Quero Meu Guia Agora
+
+Comece Hoje (R$29)
+
+Baixe o PDF + Vídeos
+
+Começar Treino Rápido
