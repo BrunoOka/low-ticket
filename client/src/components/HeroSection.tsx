@@ -31,7 +31,7 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
               ref={iframeRef}
               src={videoLoaded 
                 ? "https://player.vimeo.com/video/1136122760?autoplay=1&muted=0&controls=1&quality=auto&playsinline=1" 
-                : "https://player.vimeo.com/video/1136122760?background=1&autoplay=0&loop=0&byline=0&title=0"}
+                : "https://player.vimeo.com/video/1136122760?autoplay=0&muted=1&controls=1&quality=auto&playsinline=1#t=26s"}
               style={{ width: '100%', height: '100%' }}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
