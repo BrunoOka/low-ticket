@@ -30,7 +30,7 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
             {!videoLoaded ? (
               <>
                 <img
-                  src="https://i.vimeocdn.com/video/1962823358-d88bb1f20b25ad92e17c05c1cd07caadb1fb7ca16c8ce2e374abda56c3224a70-d_640x1138"
+                  src="https://i.vimeocdn.com/video/1962823358-d88bb1f20b25ad92e17c05c1cd07caadb1fb7ca16c8ce2e374abda56c3224a70-d_295x524"
                   alt="Video thumbnail"
                   className="w-full h-full object-cover"
                 />
