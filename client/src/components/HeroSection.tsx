@@ -31,7 +31,7 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
               ref={iframeRef}
               src={videoLoaded 
                 ? "https://player.vimeo.com/video/1136122760?autoplay=1&muted=0&controls=1&quality=auto&playsinline=1" 
-                : "https://player.vimeo.com/video/1136122760?autoplay=0&muted=1&controls=1&quality=auto&playsinline=1#t=26s"}
+                : "https://player.vimeo.com/video/1136122760?autoplay=0&muted=1&controls=1&quality=auto&playsinline=1#t=1m44s"}
               style={{ width: '100%', height: '100%' }}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
@@ -41,11 +41,17 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
             
             {!videoLoaded && (
               <div 
-                className="absolute inset-0 flex items-center justify-center cursor-pointer z-10 bg-black/30"
+                className="absolute inset-0 flex items-center justify-center cursor-pointer z-10"
                 onClick={handleClickOverlay}
                 data-testid="video-overlay"
+                style={{
+                  backgroundImage: 'url(/video-cover.png)',
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                }}
               >
-                <div className="bg-red-600 px-8 py-6 rounded-md text-center text-white shadow-lg">
+                <div className="absolute inset-0 bg-black/30" />
+                <div className="bg-red-600 px-8 py-6 rounded-md text-center text-white shadow-lg relative z-10">
                   <div className="flex items-center justify-center gap-3 mb-3">
                     <Play className="w-8 h-8" fill="white" />
                   </div>
