@@ -45,7 +45,7 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
           <div className="relative w-full max-w-md bg-card rounded-lg overflow-hidden border border-border" style={{ aspectRatio: '9/16' }} data-testid="video-hero">
             <iframe
               ref={iframeRef}
-              src="https://player.vimeo.com/video/1136122760?background=0&autoplay=0&muted=1&controls=1&quality=auto&playsinline=1"
+              src="https://player.vimeo.com/video/1136122760?background=0&autoplay=0&muted=1&controls=1&quality=auto&playsinline=1#t=0s"
               style={{ width: '100%', height: '100%' }}
               frameBorder="0"
               allow="autoplay; fullscreen; picture-in-picture"
