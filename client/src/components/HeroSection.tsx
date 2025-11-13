@@ -7,18 +7,11 @@ interface HeroSectionProps {
 }
 
 export default function HeroSection({ onCTAClick }: HeroSectionProps) {
-  const [showOverlay, setShowOverlay] = useState(true);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   const handleClickOverlay = () => {
-    setShowOverlay(false);
-    
-    if (iframeRef.current && iframeRef.current.contentWindow) {
-      iframeRef.current.contentWindow.postMessage(
-        JSON.stringify({ method: 'setVolume', value: 1 }),
-        'https://player.vimeo.com'
-      );
-    }
+    setVideoLoaded(true);
   };
 
   return (
@@ -34,35 +27,41 @@ export default function HeroSection({ onCTAClick }: HeroSectionProps) {
         
         <div className="flex justify-center mb-8">
           <div className="relative w-full max-w-md bg-card rounded-lg overflow-hidden border border-border" style={{ aspectRatio: '9/16' }} data-testid="video-hero">
-            <iframe
-              ref={iframeRef}
-              src="https://player.vimeo.com/video/1136122760?autoplay=1&muted=1&controls=1&quality=auto&playsinline=1&autopause=0"
-              style={{ width: '100%', height: '100%' }}
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-              loading="lazy"
-              title="51 Métodos de Musculação"
-            />
-            
-            {showOverlay && (
-              <div 
-                className="absolute inset-0 flex items-center justify-center cursor-pointer z-10 bg-black/30"
-                onClick={handleClickOverlay}
-                data-testid="video-overlay"
-              >
-                <div className="bg-red-600 px-8 py-6 rounded-md text-center text-white shadow-lg">
-                  <div className="flex items-center justify-center gap-3 mb-3">
-                    <Play className="w-8 h-8" fill="white" />
+            {!videoLoaded ? (
+              <>
+                <img
+                  src="https://i.vimeocdn.com/video/1962823358-d88bb1f20b25ad92e17c05c1cd07caadb1fb7ca16c8ce2e374abda56c3224a70-d_640x1138"
+                  alt="Video thumbnail"
+                  className="w-full h-full object-cover"
+                />
+                <div 
+                  className="absolute inset-0 flex items-center justify-center cursor-pointer z-10 bg-black/30"
+                  onClick={handleClickOverlay}
+                  data-testid="video-overlay"
+                >
+                  <div className="bg-red-600 px-8 py-6 rounded-md text-center text-white shadow-lg">
+                    <div className="flex items-center justify-center gap-3 mb-3">
+                      <Play className="w-8 h-8" fill="white" />
+                    </div>
+                    <p className="text-lg font-bold mb-2">
+                      Clique para assistir
+                    </p>
+                    <p className="text-sm opacity-90">
+                      com áudio
+                    </p>
                   </div>
-                  <p className="text-lg font-bold mb-2">
-                    Clique para assistir
-                  </p>
-                  <p className="text-sm opacity-90">
-                    com áudio
-                  </p>
                 </div>
-              </div>
+              </>
+            ) : (
+              <iframe
+                ref={iframeRef}
+                src="https://player.vimeo.com/video/1136122760?autoplay=1&muted=0&controls=1&quality=auto&playsinline=1"
+                style={{ width: '100%', height: '100%' }}
+                frameBorder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                allowFullScreen
+                title="51 Métodos de Musculação"
+              />
             )}
           </div>
         </div>
